@@ -16,7 +16,7 @@ def clear_screen():
 
 # To validate player name
 def name_is_valid(player_name):
-    return len(player_name) >= 4 and player_name.isalpha()
+    return len(player_name) >= 3 and player_name.isalpha()
 
 # To check if a word is already in the specified file
 def word_is_in_file(word, filename):
@@ -39,7 +39,7 @@ def word_is_valid(player_word, level):
     word_length = len(player_word)
     
     if word_length < criteria['min_length'] or word_length > criteria['max_length']:        
-        print(f"Erreur: le mot doit être  {criteria['min_length']} \net {criteria['max_length']} lettres de long incluant les trait d'unions.")        
+        print(f"Erreur: le mot doit faire entre {criteria['min_length']} \net {criteria['max_length']} lettres, incluant les trait d'unions.")        
         return False
     
     if " " in player_word or player_word.strip() == "":
@@ -79,13 +79,19 @@ def play_game(level):
     solution = random.choice(words)
     letters_found = ""
     display = "_ " * len(solution)
-
+    letters_tried = []
     print("*** LE JEU DU PENDU ***")
     
     while errors_remaining > 0:
         print("\nLe mot à deviner : ", display)
         print(f"Nombre d'erreurs restant : {errors_remaining}")
+        print("Les lettres déja utilisées :\n" + str(letters_tried))
         guess = input("Propose une lettre : ")[0:1].lower()
+        while guess in letters_tried or guess in letters_found:
+            print("Cette lettre a déjà été utilisée. Veuillez en proposer une autre.") 
+            guess = input("Propose une lettre : ")[0:1].lower()       
+        letters_tried.append(guess)   
+        letters_tried = list(set(letters_found) | set(letters_tried))
 
         if guess in solution:
             letters_found += guess
@@ -100,7 +106,7 @@ def play_game(level):
             if errors_remaining <= 2:
                 print(" ||        0  ")
             if errors_remaining <= 3:
-                print(" ||       /|\ ")
+                print(r" ||       /|\ ")
             if errors_remaining <= 4:
                 print(" ||       /|  ")
             if errors_remaining <= 5:                    

@@ -17,7 +17,7 @@ def menu():
                 player_name = input("Entrez votre nom : ")
                 if name_is_valid(player_name):
                     try: 
-                        with open('score.txt', 'a') as score: 
+                        with open('score.txt', 'a', encoding = "utf-8") as score: 
                             score.write("\n" + player_name)
                             print("Votre nom à été sauvegardé !")
                             clear_screen()
@@ -29,8 +29,8 @@ def menu():
 
         elif choice == "2":
             clear_screen()
-            print("Choisissez un niveau de difficulté (Plus dur que dur: 1, Dur: 2, Normal: 3, Facile: 4 )")
-            level_choice = input("Entez votre choix (1-4): ")
+            print("Choisissez un niveau de difficulté :\nPlus dur que dur: 1\n Dur: 2\nNormal: 3\nFacile: 4 ")
+            level_choice = input("Entrez votre choix (1-4): ")
             
             level_mapping = {
                 "1": "Très dur",
@@ -44,7 +44,7 @@ def menu():
                 continue
             
             print(f"Bien joué ! Vous avez choisi : {chosen_level.capitalize()}.")
-            word_choice = input("Vous voulez jouer avec un mot au hasard ? (1)\nou ajouter votre mot à notre collection (2) ? (1-2): ")
+            word_choice = input("Voulez vous :\n1. Jouer avec un mot au hasard\n2.Ajouter votre mot à notre collection\n\nVeuillez entrer votre choix (1 ou 2) : ")
             if word_choice == "1":
                 start_return_choice = input("Vous avez choisi au hasard ! Prêt à jouer ? (1 pour jouer, 2 pour le menu): ")
                 if start_return_choice == "1":
@@ -64,7 +64,7 @@ def menu():
                             word_file.write("\n" + player_word )
                         print("Votre mot à été ajouté à la collection !")
                     except Exception as e:
-                        display.player_word_issue(e)
+                        display.player_word_issue()
                 else:
                     print("Ce mot n'est pas valide . Essayez encore.")
             else:
