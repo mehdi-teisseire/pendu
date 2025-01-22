@@ -80,16 +80,17 @@ def play_game(level):
     letters_found = ""
     display = "_ " * len(solution)
     letters_tried = []
+    print("\n")
     print("*** LE JEU DU PENDU ***")
     
     while errors_remaining > 0:
         print("\nLe mot à deviner : ", display)
         print(f"Nombre d'erreurs restant : {errors_remaining}")
         print("Les lettres déja utilisées :\n" + str(letters_tried))
-        guess = input("Propose une lettre : ")[0:1].lower()
+        guess = input("Proposez une lettre : ")[0:1].lower()
         while guess in letters_tried or guess in letters_found:
             print("Cette lettre a déjà été utilisée. Veuillez en proposer une autre.") 
-            guess = input("Propose une lettre : ")[0:1].lower()       
+            guess = input("Proposez une lettre : ")[0:1].lower()       
         letters_tried.append(guess)   
         letters_tried = list(set(letters_found) | set(letters_tried))
 
