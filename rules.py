@@ -73,7 +73,7 @@ def play_game(level):
     
     filename, errors_remaining = filename_mapping[level]
         
-    with open(filename, "r") as word_file:
+    with open(filename, "r", encoding = "utf-8") as word_file:
         words = [line.strip() for line in word_file.readlines()]
     
     solution = random.choice(words)

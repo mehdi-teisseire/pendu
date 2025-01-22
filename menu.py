@@ -50,7 +50,7 @@ def menu():
                 if start_return_choice == "1":
                     play_game(level_choice)
             elif word_choice == "2":
-                player_word = input(f"Entez votre mot (minimum {validation_criteria[chosen_level]['min_length']} et maximum {validation_criteria[chosen_level]['max_length']} lettres, pour les mots composés : XXX-XXXX): ")
+                player_word = input(f"Entez votre mot (minimum {validation_criteria[chosen_level]['min_length']} et maximum {validation_criteria[chosen_level]['max_length']} lettres, pour les mots composés : XXX-XXXX): ").lower()
                             
                 if word_is_valid(player_word, chosen_level):
                     try:
