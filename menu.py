@@ -1,5 +1,5 @@
 import display
-from rules import clear_screen, name_is_valid, play_game
+from rules import clear_screen, name_is_valid, word_is_valid, validation_criteria, play_game
 
 # To display the menu
 def menu():
@@ -49,3 +49,30 @@ def menu():
                 start_return_choice = input("Vous avez choisi au hasard ! Prêt à jouer ? (1 pour jouer, 2 pour le menu): ")
                 if start_return_choice == "1":
                     play_game(level_choice)
+            elif word_choice == "2":
+                player_word = input(f"Entez votre mot (minimum {validation_criteria[chosen_level]['min_length']} et maximum {validation_criteria[chosen_level]['max_length']} lettres, pour les mots composés : XXX-XXXX): ")
+                            
+                if word_is_valid(player_word, chosen_level):
+                    try:
+                        filename_mapping = {
+                            'très dur': 'word1.txt',
+                            'dur': 'word2.txt',
+                            'normal': 'word3.txt',
+                            'facile': 'word4.txt'
+                        }
+                        with open(filename_mapping[chosen_level], "a") as word_file:
+                            word_file.write("\n" + player_word )
+                        print("Votre mot à été ajouté à la collection !")
+                    except Exception as e:
+                        display.player_word_issue(e)
+                else:
+                    print("Ce mot n'est pas valide . Essayez encore.")
+            else:
+                print("Choix invalide, essayez encore.")
+        elif choice == "3":            
+                    clear_screen()            
+                    # Logic for accessing the score tab would go here        
+        else:            
+            print("Choix invalide, essayez encore.")
+
+menu()                    

@@ -1,14 +1,65 @@
 import os
 import random
+import enchant
+
+# Validation criteria for different difficulty levels
+validation_criteria = {
+    'très dur': {'min_length': 10, 'max_length': 25, 'file': 'word1.txt'},
+    'dur': {'min_length': 8, 'max_length': 9, 'file': 'word2.txt'},
+    'normal': {'min_length': 6, 'max_length': 7, 'file': 'word3.txt'},
+    'facile': {'min_length': 4, 'max_length': 5, 'file': 'word4.txt'}
+}
 
 # To clear the terminal screen
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
-
 # To validate player name
 def name_is_valid(player_name):
     return len(player_name) >= 4 and player_name.isalpha()
+
+# To check if a word is already in the specified file
+def word_is_in_file(word, filename):
+    try:
+        with open(filename, 'r') as file:
+            words = file.read().splitlines()
+            return word in words
+    except FileNotFoundError:
+        print(f"Erreur: Le fichier {filename} n'existe pas.")
+        return False
+
+# To validate the player's word
+def word_is_valid(player_word, level):
+    criteria = validation_criteria.get(level)
+    
+    if not criteria:
+        print("Erreur : un niveau non valide à été entré.")
+        return False
+
+    word_length = len(player_word)
+    
+    if word_length < criteria['min_length'] or word_length > criteria['max_length']:        
+        print(f"Erreur: le mot doit être  {criteria['min_length']} \net {criteria['max_length']} lettres de long incluant les trait d'unions.")        
+        return False
+    
+    if " " in player_word or player_word.strip() == "":
+        print("Erreur: le mot ne doit pas contenir d'espaces ni être vide.")
+        return False
+
+    if word_is_in_file(player_word, criteria['file']):
+        print("Erreur: Le mot est déja dans la collection.")
+        return False
+
+    if not all(character.isalpha() or character == "-" for character in player_word):
+        print("Erreur: le mot ne doit contenir que des lettres ou des traits d'union.")
+        return False
+
+    french_dict = enchant.Dict("fr_FR")
+    if not french_dict.check(player_word):
+        print("Erreur: ce mot n'a pas été trouvé dans le dictionnaire français.")
+        return False
+
+    return True
 
 # To play the game
 def play_game(level):
