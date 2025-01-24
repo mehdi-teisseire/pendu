@@ -21,7 +21,7 @@ def name_is_valid(player_name):
 # To check if a word is already in the specified file
 def word_is_in_file(word, filename):
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding="utf-8") as file:
             words = file.read().splitlines()
             return word in words
     except FileNotFoundError:
