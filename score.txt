@@ -1,7 +1,5 @@
-étoile
-Sunny
-Hélène
-Ela
-Etan
-delphine
-gjhj
+Chris,19
+Zoé,22
+Elise,0
+Elsa,0
+mehdi,-1

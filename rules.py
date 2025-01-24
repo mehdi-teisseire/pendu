@@ -29,8 +29,8 @@ def word_is_in_file(word, filename):
         return False
 
 # To validate the player's word
-def word_is_valid(player_word, level):
-    criteria = validation_criteria.get(level)
+def word_is_valid(player_word, chosen_level):
+    criteria = validation_criteria.get(chosen_level)
     
     if not criteria:
         print("Erreur : un niveau non valide à été entré.")
@@ -132,7 +132,8 @@ def play_game(level):
 
         if "_" not in display:
             print(f"\n *** Vous avez gagné ! Le mot était : {solution} *** ")
-            break
+            return True
     
     if errors_remaining == 0:
         print(f"\nVous avez perdu ! : Le mot était : {solution}")
+        return False
