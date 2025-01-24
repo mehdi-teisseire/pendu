@@ -1,5 +1,6 @@
 import os
 import display
+from inputs import *
 
 # Score rules based on levels
 score_rules = {

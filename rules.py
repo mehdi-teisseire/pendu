@@ -1,7 +1,7 @@
 import os
 import random
 import enchant
-from display import *
+from inputs import *
 import display
 
 # Validation criteria for different difficulty levels
@@ -88,10 +88,10 @@ def play_game(level):
         display.word_to_guess(display_word)
         display.number_errors(errors_remaining)
         display.letters_used(letters_tried)
-        guess = input("Proposez une lettre : ")[0:1].lower()
+        guess = input_enter_your_letter()
         while guess in letters_tried or guess in letters_found:
             display.already_used_letter() 
-            guess = input("Proposez une lettre : ")[0:1].lower()       
+            guess = input_enter_your_letter()       
         letters_tried.append(guess)   
         letters_tried = list(set(letters_found) | set(letters_tried))
 

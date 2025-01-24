@@ -2,6 +2,7 @@ import display
 from rules import clear_screen, name_is_valid, word_is_valid, validation_criteria, play_game
 import time
 from score import update_score, display_score_table
+from inputs import *
 
 # To check if the player name is in the score file
 def name_exists(player_name):
@@ -15,21 +16,21 @@ def name_exists(player_name):
 # To verify if player already have an account
 def register_player():
     while True:
-        has_account = input("Vous êtes vous déja enrregistré auparavant ? (oui/non) : ").strip().lower()
+        has_account = input_registered_before()
         
         if has_account == 'oui':
-            player_name = input("Entrez votre nom : ")
+            player_name = input_enter_name()
             if name_exists(player_name):
                 display.welcome_player(player_name)
                 return player_name
             else:
-                try_again = input("Nom non trouvé.\nVoulez-vous essayer à nouveau (1)\nou vous enregistrer avec un nouveau nom (2) ? : ").strip()
+                try_again = input_try_register_again_or_no()
                 if try_again == '1':
                     continue
                 elif try_again == '2':
                     display.enter_name_to_register()
         
-        player_name = input("Entrez votre nom : ")
+        player_name = input_enter_name()
         if name_is_valid(player_name) and not name_exists(player_name):
             try: 
                 with open('score.txt', 'a', encoding="utf-8") as score: 
@@ -52,7 +53,7 @@ def select_difficulty():
     display.select_difficulty_menu()
 
     while True: 
-        level_choice = input("Entrez votre choix (1-4) : ")
+        level_choice = input_enter_choice1_4()
         level_mapping = {
             "1": "très dur",
             "2": "dur",
@@ -62,7 +63,6 @@ def select_difficulty():
         chosen_level = level_mapping.get(level_choice)
         
         if chosen_level:
-            display.you_chose_level(chosen_level)
             return level_choice, chosen_level
         else:
             display.invalid_level_choice_mess()
@@ -76,9 +76,10 @@ def play_game_option(player_name, level_choice):
         won = play_game(level_choice) 
         update_score(player_name, level_choice, won)
         
-        play_again = input("Voulez-vous refaire une partie ?\n (1 pour oui, 2 pour retourner au menu) : ")
+        play_again = input_play_again_or_menu()
         if play_again == "1":
-            level_choice = select_difficulty()
+            level_choice , chosen_level = select_difficulty()
+            display.you_chose_level(chosen_level)
         elif play_again == "2":
             display.return_menu_mess()
             time.sleep(2)
@@ -90,7 +91,7 @@ def play_game_option(player_name, level_choice):
 # To add a word to a collection
 def add_word_option(chosen_level):
     while True: 
-        player_word = input(f"\nVeuillez entrer votre mot (entre {validation_criteria[chosen_level]['min_length']} et {validation_criteria[chosen_level]['max_length']} lettres).\nPour les mots composés, utilisez le format : XXX-XXXX\nVotre mot : ").lower()
+        player_word = input_player_word_rules(validation_criteria, chosen_level)
         
         if word_is_valid(player_word, chosen_level):
             try:
@@ -116,7 +117,7 @@ def menu():
     while True:
         display.first_menu()
         
-        choice = input("\nEntrez votre choix (1-4): ")
+        choice = input_choice1_4()
 
         if choice == '1':
             player_name = register_player()
@@ -133,7 +134,7 @@ def menu():
                 clear_screen()
                 display.sub_menu_player_choice()
 
-                word_choice = input("\nVeuillez entrer votre choix (1-3) : ")
+                word_choice = input_enter_choice1_3()
 
                 if word_choice == "1":
                     play_game_option(player_name, level_choice)
@@ -153,7 +154,7 @@ def menu():
             clear_screen()            
             display_score_table()
             while True:
-                return_to_menu = input("\nPour retourner au menu (1) : ")
+                return_to_menu = input_return_menu()
                 if return_to_menu == "1":
                     time.sleep(2)
                     clear_screen()
