@@ -69,7 +69,8 @@ def select_difficulty():
         
         if chosen_level:
             print(f"Vous avez choisi : {chosen_level}.")
-            return chosen_level
+            #return chosen_level
+            return level_choice, chosen_level
         else:
             print("Choix de niveau invalide.\nVeuillez entrer un nombre entre 1 et 4.")
             print(" ")
@@ -138,7 +139,7 @@ def menu():
         elif choice == "2":
             time.sleep(2)
             clear_screen()
-            chosen_level = select_difficulty()
+            level_choice,chosen_level = select_difficulty()
 
             while True:
                 time.sleep(2)
@@ -152,7 +153,7 @@ def menu():
                 word_choice = input("\nVeuillez entrer votre choix (1-3) : ")
 
                 if word_choice == "1":
-                    play_game_option(player_name, chosen_level)
+                    play_game_option(player_name, level_choice)
 
                 elif word_choice == "2":
                     add_word_option(chosen_level)

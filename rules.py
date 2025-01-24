@@ -43,7 +43,7 @@ def word_is_valid(player_word, chosen_level):
         return False
     
     if " " in player_word or player_word.strip() == "":
-        print("Erreur: le mot ne doit pas contenir d'espaces ni être vide.")
+        print("Erreur: le mot ne doit pas contenir d'espaces.")
         return False
 
     if word_is_in_file(player_word, criteria['file']):
