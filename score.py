@@ -1,4 +1,5 @@
 import os
+import display
 
 # Score rules based on levels
 score_rules = {
@@ -60,7 +61,7 @@ def display_score_table():
     scores = read_scores()
     sorted_scores = sorted(scores.items(), key = lambda x: x[1], reverse = True)
 
-    print("\n=== Tableau des Scores ===")
-    print("Nom du Joueur\tScore")
+    display.score_tab_title()
+    display.player_score()
     for name, score in sorted_scores:
-        print(f"{name}\t\t{score}")
+        display.for_each_player_name_score(name, score)

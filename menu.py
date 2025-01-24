@@ -20,21 +20,21 @@ def register_player():
         if has_account == 'oui':
             player_name = input("Entrez votre nom : ")
             if name_exists(player_name):
-                print(f"Bienvenue de nouveau, {player_name}!")
+                display.welcome_player(player_name)
                 return player_name
             else:
                 try_again = input("Nom non trouvé.\nVoulez-vous essayer à nouveau (1)\nou vous enregistrer avec un nouveau nom (2) ? : ").strip()
                 if try_again == '1':
                     continue
                 elif try_again == '2':
-                    print("D'accord, veuillez entrer votre nom pour vous enregistrer.")
+                    display.enter_name_to_register()
         
         player_name = input("Entrez votre nom : ")
         if name_is_valid(player_name) and not name_exists(player_name):
             try: 
                 with open('score.txt', 'a', encoding="utf-8") as score: 
                     score.write("\n" + player_name + ",0")
-                    print("Votre nom a été sauvegardé.")
+                    display.saved_your_name()
                     return player_name
             except Exception as e: 
                 display.player_name_issue(e)
@@ -42,20 +42,14 @@ def register_player():
             if not name_is_valid(player_name):
                 display.invalid_player_name()
             else:
-                print("Ce nom est déjà enregistré. Veuillez en choisir un autre.")
+                display.name_already_registered()
 
         time.sleep(2)
         clear_screen()
     
 # A menu to select the game level
 def select_difficulty():
-    print("\n=== Choisissez un niveau de difficulté ===")
-    print(" ")
-    print("1. Plus dur que dur")
-    print("2. Dur")
-    print("3. Normal")
-    print("4. Facile")
-    print(" ")
+    display.select_difficulty_menu()
 
     while True: 
         level_choice = input("Entrez votre choix (1-4) : ")
@@ -68,12 +62,10 @@ def select_difficulty():
         chosen_level = level_mapping.get(level_choice)
         
         if chosen_level:
-            print(f"Vous avez choisi : {chosen_level}.")
-            #return chosen_level
+            display.you_chose_level(chosen_level)
             return level_choice, chosen_level
         else:
-            print("Choix de niveau invalide.\nVeuillez entrer un nombre entre 1 et 4.")
-            print(" ")
+            display.invalid_level_choice_mess()
 
  # Loop for playing multiple games and register scores
 def play_game_option(player_name, level_choice):
@@ -88,12 +80,12 @@ def play_game_option(player_name, level_choice):
         if play_again == "1":
             level_choice = select_difficulty()
         elif play_again == "2":
-            print("Retour au menu ...")
+            display.return_menu_mess()
             time.sleep(2)
             clear_screen()
             return
         else:
-            print("Choix invalide. Veuillez entrer 1 ou 2.")
+            display.invalid_choice_mess()
 
 # To add a word to a collection
 def add_word_option(chosen_level):
@@ -110,24 +102,19 @@ def add_word_option(chosen_level):
                 }
                 with open(filename_mapping[chosen_level], "a", encoding= "utf-8") as word_file:
                     word_file.write("\n" + player_word)
-                print("Votre mot a été ajouté à la collection avec succès !")
+                display.word_added_succesfully()
                 return
             except Exception :
-                print("Une erreur est survenue lors de l'ajout du mot. Veuillez réessayer.")
+                display.error_happen_adding_word()
         else:
-            print("Ce mot n'est pas valide. Veuillez essayer encore.")
+            display.invalid_word_mess()
 
 # To organize all the navigation The big menu
 def menu():
     player_name = ""
 
     while True:
-        print("\n=== MENU DU PENDU ===")
-        print(" ")
-        print("1. S'enregistrer")
-        print("2. JOUER ")
-        print("3. Le tableau des scores ")
-        print("4. Quitter")  
+        display.first_menu()
         
         choice = input("\nEntrez votre choix (1-4): ")
 
@@ -144,11 +131,7 @@ def menu():
             while True:
                 time.sleep(2)
                 clear_screen()
-                print("\n=== Que voulez-vous faire ? ===")
-                print(" ")
-                print("1. Jouer avec un mot au hasard")    
-                print("2. Ajouter votre mot à notre collection")
-                print("3. Retour au menu principal")
+                display.sub_menu_player_choice()
 
                 word_choice = input("\nVeuillez entrer votre choix (1-3) : ")
 
@@ -158,12 +141,12 @@ def menu():
                 elif word_choice == "2":
                     add_word_option(chosen_level)
                 elif word_choice == "3":
-                    print("Retour au menu principal")
+                    display.return_first_menu()
                     time.sleep(2)
                     clear_screen()
                     break
                 else: 
-                    print ("Choix invalide. Veuillez entrer 1, 2 ou 3.")
+                    display.invalid_choice_mess_3()
 
         elif choice == "3":
             time.sleep(2)            
@@ -176,14 +159,13 @@ def menu():
                     clear_screen()
                     break
                 else:
-                    print ("Choix invalide. Veuillez entrer 1.")
+                    display.invalid_choice_mess_1()
             
-        elif choice == "4":  
-            print("Merci d'avoir joué ! À bientôt.")
-            print(" ")
+        elif choice == "4":
+            display.tanks_for_playing()  
             break
             
-        else:            
-            print("Choix invalide, essayez encore.")
+        else:
+            display.invalid_choice_try_again()            
 
 menu()

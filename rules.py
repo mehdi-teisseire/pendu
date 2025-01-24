@@ -1,6 +1,8 @@
 import os
 import random
 import enchant
+from display import *
+import display
 
 # Validation criteria for different difficulty levels
 validation_criteria = {
@@ -25,7 +27,7 @@ def word_is_in_file(word, filename):
             words = file.read().splitlines()
             return word in words
     except FileNotFoundError:
-        print(f"Erreur: Le fichier {filename} n'existe pas.")
+        display.file_do_not_exist_error()
         return False
 
 # To validate the player's word
@@ -33,30 +35,30 @@ def word_is_valid(player_word, chosen_level):
     criteria = validation_criteria.get(chosen_level)
     
     if not criteria:
-        print("Erreur : un niveau non valide à été entré.")
+        display.invalid_level_mess()
         return False
 
     word_length = len(player_word)
     
-    if word_length < criteria['min_length'] or word_length > criteria['max_length']:        
-        print(f"Erreur: le mot doit faire entre {criteria['min_length']} \net {criteria['max_length']} lettres, incluant les trait d'unions.")        
+    if word_length < criteria['min_length'] or word_length > criteria['max_length']:
+        display.lenght_error_mess(criteria)                
         return False
     
     if " " in player_word or player_word.strip() == "":
-        print("Erreur: le mot ne doit pas contenir d'espaces.")
+        display.no_space_error_mess()
         return False
 
     if word_is_in_file(player_word, criteria['file']):
-        print("Erreur: Le mot est déja dans la collection.")
+        display.word_already_in_collection_mess()
         return False
 
     if not all(character.isalpha() or character == "-" for character in player_word):
-        print("Erreur: le mot ne doit contenir que des lettres ou des traits d'union.")
+        display.no_space_word_error_mess()
         return False
 
     french_dict = enchant.Dict("fr_FR")
     if not french_dict.check(player_word):
-        print("Erreur: ce mot n'a pas été trouvé dans le dictionnaire français.")
+        display.not_in_french_dictionnary_error_mess()
         return False
 
     return True
@@ -78,62 +80,61 @@ def play_game(level):
     
     solution = random.choice(words)
     letters_found = ""
-    display = "_ " * len(solution)
+    display_word = "_ " * len(solution)
     letters_tried = []
-    print("\n")
-    print("*** LE JEU DU PENDU ***")
-    
+    display.hangman_title()
+
     while errors_remaining > 0:
-        print("\nLe mot à deviner : ", display)
-        print(f"Nombre d'erreurs restant : {errors_remaining}")
-        print("Les lettres déja utilisées :\n" + str(letters_tried))
+        display.word_to_guess(display_word)
+        display.number_errors(errors_remaining)
+        display.letters_used(letters_tried)
         guess = input("Proposez une lettre : ")[0:1].lower()
         while guess in letters_tried or guess in letters_found:
-            print("Cette lettre a déjà été utilisée. Veuillez en proposer une autre.") 
+            display.already_used_letter() 
             guess = input("Proposez une lettre : ")[0:1].lower()       
         letters_tried.append(guess)   
         letters_tried = list(set(letters_found) | set(letters_tried))
 
         if guess in solution:
             letters_found += guess
-            print("Bien joué!")
+            display.well_done()
         else:
             errors_remaining -= 1
-            print("Pas cette fois, essaie encore !\n")
+            display.not_this_time()
             if errors_remaining == 0:
-                print(" ==========Y= ")
+                display.errors_remaining0_graph()
             if errors_remaining <= 1:
-                print(" ||/       |  ")
+                display.errors_remaining1_graph()
             if errors_remaining <= 2:
-                print(" ||        0  ")
+                display.errors_remaining2_graph()
             if errors_remaining <= 3:
-                print(r" ||       /|\ ")
+                display.errors_remaining3_graph()
             if errors_remaining <= 4:
-                print(" ||       /|  ")
-            if errors_remaining <= 5:                    
-                print("==============")
+                display.errors_remaining4_graph()
+            if errors_remaining <= 5:
+                display.errors_remaining5_graph()                    
             if errors_remaining <= 6:
-                print("||  ||  ||  ||")
+                display.errors_remaining6_graph()
             if errors_remaining <= 7:
-                print("==============")
+                display.errors_remaining7_graph()
             if errors_remaining <= 8:
-                print("||  ||  ||  ||")
+                display.errors_remaining8_graph()
             if errors_remaining <= 9:
-                print("==============")
+                display.errors_remaining9_graph()
             if errors_remaining <= 10:
-                print("||  ||  ||  ||")            
+                display.errors_remaining10_graph()           
 
-        display = ""
+        display_word = ""
         for current_character in solution:
             if current_character in letters_found:
-                display += current_character + " "
+                display_word += current_character + " "
             else:
-                display += "_ "
+                display_word += "_ "
 
-        if "_" not in display:
-            print(f"\n *** Vous avez gagné ! Le mot était : {solution} *** ")
+        if "_" not in display_word:
+            display.won_mess(solution)
             return True
     
     if errors_remaining == 0:
-        print(f"\nVous avez perdu ! : Le mot était : {solution}")
+        display.lose_mess(solution)
         return False
