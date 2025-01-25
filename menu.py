@@ -24,8 +24,13 @@ def register_player():
         
         if play_guest == '1':
             while True:
-                has_account = input_registered_before()
-
+                while True:
+                    has_account = input_registered_before()
+                    if has_account.lower() in ['oui', 'non']: 
+                        break
+                    else:
+                        display.invalid_choice_mess() 
+                
                 if has_account == 'oui':
                     player_name = input_enter_name()
                     if name_exists(player_name):
