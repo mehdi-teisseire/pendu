@@ -83,9 +83,9 @@ def first_menu():
 def sub_menu_player_choice():
     print("\n=== Que voulez-vous faire ? ===")
     print(" ")
-    print("1. Jouer avec un mot au hasard")    
-    print("2. Ajouter votre mot à notre collection")
-    print("3. Retour au menu principal")
+    print("1. Jouer avec un Mot Aléatoire")    
+    print("2. Ajouter un Mot à la Collection")
+    print("3. Revenir au menu principal")
 
 #rules errors
 def invalid_level_mess():
