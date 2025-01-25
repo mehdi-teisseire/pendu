@@ -64,12 +64,13 @@ def tanks_for_playing():
 
 # Menus
 def select_difficulty_menu():
-    print("\n=== Choisissez un niveau de difficulté ===")
+    print("\n=== Choisissez Votre Destin ===")
+    print("(+) Facile\t(++++) Très Dur")
     print(" ")
-    print("1. Plus dur que dur")
-    print("2. Dur")
-    print("3. Normal")
-    print("4. Facile")
+    print("1. La Faucheuse (++++)")
+    print("2. Le Dernier Souffle (+++)")
+    print("3. La Corde au Cou (++)")
+    print("4. Le Dernier Repas (+)")
     print(" ")
 
 def first_menu():
