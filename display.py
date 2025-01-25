@@ -73,12 +73,12 @@ def select_difficulty_menu():
     print(" ")
 
 def first_menu():
-    print("\n=== MENU DU PENDU ===")
+    print("\n=== AU MENU DU PENDU ===")
     print(" ")
-    print("1. S'enregistrer")
-    print("2. JOUER ")
-    print("3. Le tableau des scores ")
-    print("4. Quitter")  
+    print("1. Jouer en Invité\n\033[3CCréer un Compte\n\033[3CSe Connecter")
+    print("2. Lancer une Partie ")
+    print("3. Meilleurs Scores ")
+    print("4. Quitter le Jeu")  
 
 def sub_menu_player_choice():
     print("\n=== Que voulez-vous faire ? ===")
