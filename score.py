@@ -12,10 +12,8 @@ score_rules = {
 # To update the score when player already have an account
 def update_score(player_name, level, won):
     scores = read_scores()
-    
     if player_name not in scores:
-        scores[player_name] = 0  
-
+        return  
     if won:
         scores[player_name] += score_rules[level]["gagné"]
     else:
@@ -43,19 +41,6 @@ def write_scores(scores):
         for name, score in scores.items():
             file.write(f"{name},{score}\n")
 
-# To update the score for a player
-def update_score(player_name, level, won):
-    scores = read_scores()
-    
-    if player_name not in scores:
-        scores[player_name] = 0
-
-    if won:
-        scores[player_name] += score_rules[level]["gagné"]
-    else:
-        scores[player_name] += score_rules[level]["perdu"]
-
-    write_scores(scores)
 
 # To display the score table
 def display_score_table():
