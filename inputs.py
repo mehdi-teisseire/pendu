@@ -1,5 +1,7 @@
 
 # Menu inputs
+def input_register_or_guest():
+    return input("Souhaitez vous vous enregistrer et participer au classement\nou jouer en tant qu'invité ? (1-2) : ").strip()
 
 def input_registered_before():
     return input("Vous êtes vous déja enrregistré auparavant ? (oui/non) : ").strip().lower()

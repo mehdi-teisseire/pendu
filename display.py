@@ -16,7 +16,7 @@ def invalid_level_choice_mess():
     print(" ")
 
 def invalid_choice_mess():
-    print("Choix invalide. Veuillez entrer 1 ou 2.")
+    print("Erreur : Veuillez entrer 1 ou 2.")
 
 def error_happen_adding_word():
     print("Une erreur est survenue lors de l'ajout du mot. Veuillez réessayer.")
@@ -34,6 +34,9 @@ def invalid_choice_try_again():
     print("Choix invalide, essayez encore.")
 
 # Menu messages
+def play_as_guest():
+    print("Bienvenue, vous jouez en tant qu'invité.")
+
 def welcome_player(player_name):
     print(f"Bienvenue de nouveau, {player_name}!") 
 
