@@ -1,10 +1,10 @@
 
 # Menu inputs
 def input_register_or_guest():
-    return input("Souhaitez vous vous enregistrer et participer au classement\nou jouer en tant qu'invité ? (1-2) : ").strip()
+    return input("Souhaitez-vous vous enregistrer et participer au classement (1)\nou jouer en tant qu'invité (2) ? : ").strip()
 
 def input_registered_before():
-    return input("Vous êtes vous déja enrregistré auparavant ? (oui/non) : ").strip().lower()
+    return input("Vous êtes-vous déja enrregistré auparavant ? (oui/non) : ").strip().lower()
 
 def input_enter_name():
     return input("Entrez votre nom : ")
@@ -28,7 +28,7 @@ def input_enter_choice1_3():
     return input("\nVeuillez entrer votre choix (1-3) : ")
 
 def input_return_menu():
-    return input("\nPour retourner au menu (1) : ")
+    return input("\nPour retourner au menu, entrez (1) : ")
 
 # rules inputs
 
