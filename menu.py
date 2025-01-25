@@ -13,55 +13,52 @@ def name_exists(player_name):
     except FileNotFoundError:
         return False
 
-# To play as guest
-def register_or_guest():
-    while True:
-        play_guest = input_register_or_guest()
-        if play_guest in ['1','2']:
-            display.play_as_guest()
-            return play_guest
-        else:
-            display.invalid_choice_mess()
-
-# To verify if player already have an account
+# To register login or play as guest
 def register_player():
-
-    while True:
-        play_guest = register_or_guest()
-        if play_guest == '1':
-            has_account = input_registered_before()
+    while True: 
+        play_guest = input_register_or_guest() 
         
-            if has_account == 'oui':
-                player_name = input_enter_name()
-                if name_exists(player_name):
-                    display.welcome_player(player_name)
-                    return player_name
-                else:
-                    try_again = input_try_register_again_or_no()
-                    if try_again == '1':
-                        continue
-                    elif try_again == '2':
-                        display.enter_name_to_register()
-            
-            player_name = input_enter_name()
-            if name_is_valid(player_name) and not name_exists(player_name):
-                try: 
-                    with open('score.txt', 'a', encoding="utf-8") as score: 
-                        score.write("\n" + player_name + ",0")
-                        display.saved_your_name()
+        if play_guest == '2':
+            display.play_as_guest() 
+            return
+        
+        if play_guest == '1':
+            while True:
+                has_account = input_registered_before()
+
+                if has_account == 'oui':
+                    player_name = input_enter_name()
+                    if name_exists(player_name):
+                        display.welcome_player(player_name)
                         return player_name
-                except Exception as e: 
-                    display.player_name_issue(e)
-            else:
-                if not name_is_valid(player_name):
-                    display.invalid_player_name()
+                    else:
+                        try_again = input_try_register_again_or_no()
+                        if try_again == '1':
+                            continue
+                        elif try_again == '2':
+                            display.enter_name_to_register()
+                            break 
+
+                player_name = input_enter_name()
+                if name_is_valid(player_name) and not name_exists(player_name):
+                    try: 
+                        with open('score.txt', 'a', encoding="utf-8") as score: 
+                            score.write("\n" + player_name + ",0")
+                            display.saved_your_name()
+                            return player_name
+                    except Exception as e: 
+                        display.player_name_issue(e)
                 else:
-                    display.name_already_registered()
-        elif play_guest == '2':
-          return  
-        time.sleep(2)
-        clear_screen()
-    
+                    if not name_is_valid(player_name):
+                        display.invalid_player_name()
+                    else:
+                        display.name_already_registered()
+
+                time.sleep(2)
+                clear_screen()
+
+        display.invalid_choice_mess()
+
 # A menu to select the game level
 def select_difficulty():
     display.select_difficulty_menu()
