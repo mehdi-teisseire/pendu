@@ -110,6 +110,17 @@ def not_in_french_dictionnary_error_mess():
 def file_do_not_exist_error(filename):
     print(f"Erreur: Le fichier {filename} n'existe pas.")
 
+# play errors
+
+def empty_input_error():
+    print("L'entrée ne peut pas être vide.")
+
+def space_input_error():
+    print("L'entrée ne peut pas être un espace.")
+
+def invalid_character_errors():
+    print("Caractère invalide. Veuillez entrer une lettre.")
+
 # rules menu 
 
 def hangman_title():
@@ -171,7 +182,7 @@ def won_mess(solution):
     print(f"\n *** Vous avez gagné ! Le mot était : {solution} *** ")
 
 def lose_mess(solution):
-    print(f"\nVous avez perdu ! : Le mot était : {solution}. Ne vous découragez pas et essayez encore !")
+    print(f"\nVous avez perdu ! : Le mot était : {solution}.\nNe vous découragez pas et essayez encore !")
 
 # scores
 

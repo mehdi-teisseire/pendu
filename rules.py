@@ -63,7 +63,24 @@ def word_is_valid(player_word, chosen_level):
 
     return True
 
-# To play the game
+# To validate the guess letter
+def validate_guess(guess):
+
+    if not guess:
+        display.empty_input_error()
+        return False
+    
+    if guess == " ":
+        display.space_input_error()
+        return False
+    
+    if not guess.isalpha():
+        display.invalid_character_errors() 
+        return False
+    
+    return True
+
+# the game function 
 def play_game(level):
 
     filename_mapping = {
@@ -88,10 +105,17 @@ def play_game(level):
         display.word_to_guess(display_word)
         display.number_errors(errors_remaining)
         display.letters_used(letters_tried)
+       
         guess = input_enter_your_letter()
+        if not validate_guess(guess):
+            continue 
+        
         while guess in letters_tried or guess in letters_found:
             display.already_used_letter() 
-            guess = input_enter_your_letter()       
+            guess = input_enter_your_letter() 
+            if not validate_guess(guess):
+                continue 
+        
         letters_tried.append(guess)   
         letters_tried = list(set(letters_found) | set(letters_tried))
 
