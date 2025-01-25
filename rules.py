@@ -128,6 +128,8 @@ def play_game(level):
         for current_character in solution:
             if current_character in letters_found:
                 display_word += current_character + " "
+            elif current_character == "-":
+                display_word += "- "
             else:
                 display_word += "_ "
 
