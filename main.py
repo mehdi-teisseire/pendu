@@ -1,5 +1,5 @@
 import pygame
-import sys
+import menu
 
 # Initialize Pygame
 pygame.init()
@@ -44,22 +44,27 @@ def draw_title_screen():
 	 
 	pygame.display.flip()
 def main():
-	running = True
-	while running:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				running = False
-			elif event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_SPACE:
-					print("Game would start here")
-					# Game here
-				elif event.key == pygame.K_ESCAPE:
-					running = False
-		
-		draw_title_screen()
+    pygame.init()
+    pygame.font.init()
+    screen = pygame.display.set_mode((900, 600))
+    pygame.display.set_caption("Le Jeu du Pendu")
+    running = True
 
-	pygame.quit()
-	sys.exit()
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # Fill the screen with black
+        screen.fill((0, 0, 0))
+
+        # Call the menu function to render the menu
+        menu.menu(screen)
+
+        # Update the display
+        pygame.display.flip()
+
+    pygame.quit()
 
 if __name__ == "__main__":
-	main()
+    main()
