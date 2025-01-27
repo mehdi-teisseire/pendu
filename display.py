@@ -64,6 +64,15 @@ def invalid_choice_mess(screen):
     seventh = "Veuillez entrer 1 ou 2. "
     return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
+def invalid_choice_mess_o_n(screen):
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Erreur."
+    sixth = " "
+    seventh = "Veuillez entrer oui ou non. "
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def error_happen_adding_word(screen):
     first ="======= LE JEU DU PENDU ======="
@@ -319,13 +328,13 @@ def errors_remaining0_graph(screen, display_word, errors_remaining, letters_trie
     seventh = "Les lettres déjà utilisées :"
     eighth = str(letters_tried)
     ninth = " "
-    tenth = "Raté, essayez encore !"
+    tenth = "Et c'est perdu! Dommage !"
     eleventh = "Appuyez \"Entrée\" pour continuer."
     twelfth = " "
     thirteenth =" ==========Y= "
     fourteenth =" ||/       |  "
     fifteenth =" ||        0  "
-    sixteenth =" ||       /|\ "
+    sixteenth =" ||       /|\uFF3C "
     seventeenth =" ||       /|  "
     eighteenth ="=============="
     nineteenth ="||  ||  ||  ||"
@@ -341,315 +350,315 @@ def errors_remaining0_graph(screen, display_word, errors_remaining, letters_trie
     return input_letter[0:1].lower()
     
 
-def errors_remaining1_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" ||/       |  "
-    fifteenth =" ||        0  "
-    sixteenth =" ||       /|\ "
-    seventeenth =" ||       /|  "
-    eighteenth ="=============="
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining1_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" ||/       |  "
+#     fifteenth =" ||        0  "
+#     sixteenth =" ||       /|\uFF3C "
+#     seventeenth =" ||       /|  "
+#     eighteenth ="=============="
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining2_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" ||        0  "
-    sixteenth =" ||       /|\ "
-    seventeenth =" ||       /|  "
-    eighteenth ="=============="
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining2_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" ||        0  "
+#     sixteenth =" ||       /|\uFF3C "
+#     seventeenth =" ||       /|  "
+#     eighteenth ="=============="
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining3_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" ||       /|\ "
-    seventeenth =" ||       /|  "
-    eighteenth ="=============="
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining3_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" ||       /|\uFF3C "
+#     seventeenth =" ||       /|  "
+#     eighteenth ="=============="
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining4_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth ="  "
-    sixteenth =" "
-    seventeenth =" ||       /|  "
-    eighteenth ="=============="
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining4_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth ="  "
+#     sixteenth =" "
+#     seventeenth =" ||       /|  "
+#     eighteenth ="=============="
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining5_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth ="=============="
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining5_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth ="=============="
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining6_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth = " "
-    nineteenth ="||  ||  ||  ||"
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining6_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth = " "
+#     nineteenth ="||  ||  ||  ||"
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining7_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth =" "
-    nineteenth =" "
-    twentieth = "=============="
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining7_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth =" "
+#     nineteenth =" "
+#     twentieth = "=============="
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining8_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth =" "
-    nineteenth =" "
-    twentieth = " "
-    twentieth_one ="||  ||  ||  ||"
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining8_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth =" "
+#     nineteenth =" "
+#     twentieth = " "
+#     twentieth_one ="||  ||  ||  ||"
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining9_graph(screen, display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth =" "
-    nineteenth =" "
-    twentieth = " "
-    twentieth_one = " "
-    twentieth_two ="=============="
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining9_graph(screen, display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth =" "
+#     nineteenth =" "
+#     twentieth = " "
+#     twentieth_one = " "
+#     twentieth_two ="=============="
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
-def errors_remaining10_graph(screen,display_word, errors_remaining, letters_tried):
-    first= "======= LE JEU DU PENDU ======="
-    second =" "
-    third =  "Le mot à deviner : "
-    fourth = display_word
-    fifth = " "
-    sixth = f"Il reste {errors_remaining} erreurs."
-    seventh = "Les lettres déjà utilisées :"
-    eighth = str(letters_tried)
-    ninth = " "
-    tenth = "Raté, essayez encore !"
-    eleventh = "Appuyez \"Entrée\" pour continuer."
-    twelfth = " "
-    thirteenth =" "
-    fourteenth =" "
-    fifteenth =" "
-    sixteenth =" "
-    seventeenth =" "
-    eighteenth =" "
-    nineteenth =" "
-    twentieth = " "
-    twentieth_one =" "
-    twentieth_two =" "
-    twentieth_tree = "||  ||  ||  ||"
-    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
-                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
-                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
-                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
-                                twentieth_tree)
-    return input_letter[0:1].lower()
+# def errors_remaining10_graph(screen,display_word, errors_remaining, letters_tried):
+#     first= "======= LE JEU DU PENDU ======="
+#     second =" "
+#     third =  "Le mot à deviner : "
+#     fourth = display_word
+#     fifth = " "
+#     sixth = f"Il reste {errors_remaining} erreurs."
+#     seventh = "Les lettres déjà utilisées :"
+#     eighth = str(letters_tried)
+#     ninth = " "
+#     tenth = "Raté, essayez encore !"
+#     eleventh = "Appuyez \"Entrée\" pour continuer."
+#     twelfth = " "
+#     thirteenth =" "
+#     fourteenth =" "
+#     fifteenth =" "
+#     sixteenth =" "
+#     seventeenth =" "
+#     eighteenth =" "
+#     nineteenth =" "
+#     twentieth = " "
+#     twentieth_one =" "
+#     twentieth_two =" "
+#     twentieth_tree = "||  ||  ||  ||"
+#     input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+#                               seventh, eighth, ninth, tenth, eleventh , twelfth , 
+#                               thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+#                               eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+#                                 twentieth_tree)
+#     return input_letter[0:1].lower()
 
 
 def won_mess(screen, solution):

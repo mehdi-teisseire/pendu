@@ -73,7 +73,7 @@ def input_play_again_or_menu(screen):
     third =" "
     fourth =" "
     fifth = "Voulez-vous refaire une partie ?"
-    sixth = " 1 pour oui"
+    sixth = "1 pour oui"
     seventh = "2 pour retourner au menu :"
     return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
@@ -135,8 +135,25 @@ def input_enter_your_letter(screen, display_word, errors_remaining, letters_trie
     eight = str(letters_tried)
     ninth = " "
     tenth = "Proposez une lettre : "
+    eleventh = " "
+    twelfth = " "
+    thirteenth =" ==========Y= " if errors_remaining == 0 else " "
+    fourteenth =" ||/       |  " if errors_remaining <= 1 else " "
+    fifteenth =" ||        0  " if errors_remaining <= 2 else " "
+    sixteenth =" ||       /|\uFF3C " if errors_remaining <= 3 else " "
+    seventeenth =" ||       /|  " if errors_remaining <= 4 else " "
+    eighteenth ="==============" if errors_remaining <= 5 else " "
+    nineteenth ="||  ||  ||  ||" if errors_remaining <= 6 else " "
+    twentieth = "==============" if errors_remaining <= 7 else " "
+    twentieth_one ="||  ||  ||  ||" if errors_remaining <= 8 else " "
+    twentieth_two ="==============" if errors_remaining <= 9 else " "
+    twentieth_tree = "||  ||  ||  ||" if errors_remaining <= 10 else " "
+
     input_letter = get_input(screen, first, second,third,fourth,fifth,sixth,
-                             seventh,eight,ninth,tenth)
+                             seventh,eight,ninth,tenth, eleventh, twelfth, 
+                             thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                             eighteenth, nineteenth, twentieth, twentieth_one, twentieth_two,
+                             twentieth_tree)
     return input_letter[0:1].lower()
 
 # Already used letter

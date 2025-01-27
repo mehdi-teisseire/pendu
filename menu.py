@@ -28,7 +28,7 @@ def register_player(screen):
                 if has_account.lower() in ['oui', 'non']: 
                     break
                 else:
-                    display.invalid_choice_mess(screen) 
+                    display.invalid_choice_mess_o_n(screen) 
             
             player_name = input_enter_name(screen)
             

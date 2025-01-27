@@ -121,26 +121,26 @@ def play_game(screen, level):
             input_not_this_time(screen, display_word,errors_remaining,letters_tried)
             if errors_remaining == 0:
                 display.errors_remaining0_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 1:
-                display.errors_remaining1_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 2:
-                display.errors_remaining2_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 3:
-                display.errors_remaining3_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 4:
-                display.errors_remaining4_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 5:
-                display.errors_remaining5_graph(screen, display_word,errors_remaining,letters_tried)                
-            if errors_remaining <= 6:
-                display.errors_remaining6_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 7:
-                display.errors_remaining7_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 8:
-                display.errors_remaining8_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 9:
-                display.errors_remaining9_graph(screen, display_word,errors_remaining,letters_tried)
-            if errors_remaining <= 10:
-                display.errors_remaining10_graph(screen, display_word,errors_remaining,letters_tried)           
+            # elif errors_remaining <= 1:
+            #     display.errors_remaining1_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 2:
+            #     display.errors_remaining2_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 3:
+            #     display.errors_remaining3_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 4:
+            #     display.errors_remaining4_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 5:
+            #     display.errors_remaining5_graph(screen, display_word,errors_remaining,letters_tried)                
+            # elif errors_remaining <= 6:
+            #     display.errors_remaining6_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 7:
+            #     display.errors_remaining7_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 8:
+            #     display.errors_remaining8_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 9:
+            #     display.errors_remaining9_graph(screen, display_word,errors_remaining,letters_tried)
+            # elif errors_remaining <= 10:
+            #     display.errors_remaining10_graph(screen, display_word,errors_remaining,letters_tried)           
 
         display_word = ""
         for current_character in solution:
