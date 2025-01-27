@@ -1,3 +1,5 @@
+
+
 import os
 import display
 from inputs import *
@@ -43,11 +45,10 @@ def write_scores(scores):
 
 
 # To display the score table
-def display_score_table():
+def display_score_table(screen):
     scores = read_scores()
     sorted_scores = sorted(scores.items(), key = lambda x: x[1], reverse = True)
 
-    display.score_tab_title()
-    display.player_score()
-    for name, score in sorted_scores:
-        display.for_each_player_name_score(name, score)
+    display.score_tab_title(screen)
+    display.player_score(screen)
+    display.for_each_player_name_score(screen, sorted_scores)

@@ -1,3 +1,11 @@
-Chris,54
-Zoé,22
-mehdi,-1
+Chris,-1
+Elsa,0
+Helène,0
+Robby,-1
+Elise,0
+Zoé,-1
+Hélène,0
+Henri,0
+Zazou,0
+Hugo,0
+Albert,0

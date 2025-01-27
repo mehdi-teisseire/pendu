@@ -31,3 +31,4 @@ aime
 rami
 aube
 dodo
+franc
