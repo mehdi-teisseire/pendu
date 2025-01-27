@@ -12,55 +12,8 @@ def name_exists(player_name):
             return player_name in registered_names
     except FileNotFoundError:
         return False
-"""
+    
 # To register login or play as guest
-def register_player(screen):
-    while True: 
-        play_guest = input_register_or_guest(screen) 
-        
-        if play_guest == '2':
-            display.play_as_guest(screen) 
-            return
-        
-        if play_guest == '1':
-            while True:
-                while True:
-                    has_account = input_registered_before(screen)
-                    if has_account.lower() in ['oui', 'non']: 
-                        break
-                    else:
-                        display.invalid_choice_mess(screen) 
-                
-                if has_account == 'oui':
-                    player_name = input_enter_name(screen)
-                    if name_exists(player_name):
-                        input_welcome_player(screen, player_name)
-                        return player_name
-                    else:
-                        try_again = input_try_register_again_or_no(screen)
-                        if try_again == '1':
-                            continue
-                        elif try_again == '2':
-                            display.enter_name_to_register(screen)
-                            break 
-
-                player_name = input_enter_name(screen)
-                if name_is_valid(player_name) and not name_exists(player_name):
-                    try: 
-                        with open('score.txt', 'a', encoding="utf-8") as score: 
-                            score.write("\n" + player_name + ",0")
-                            input_welcome_new_player(screen, player_name)
-                            return player_name
-                    except Exception as e: 
-                        display.player_name_issue(screen)
-                else:
-                    if not name_is_valid(player_name):
-                        display.invalid_player_name(screen)
-                    else:
-                        display.name_already_registered(screen)
-
-        display.invalid_choice_mess(screen)
-"""
 def register_player(screen):
     while True: 
         play_guest = input_register_or_guest(screen) 
@@ -108,9 +61,9 @@ def register_player(screen):
 
         display.invalid_choice_mess(screen)
 
-# A menu to select the game level
+# To select the game level
 def select_difficulty(screen):
-    display.select_difficulty_menu(screen)
+     #input_enter_choice1_4(screen)
 
     while True: 
         level_choice = input_enter_choice1_4(screen)
@@ -173,7 +126,7 @@ def menu(screen):
     player_name = ""
 
     while True:
-        display.first_menu(screen)
+        #input_choice1_3(screen)
         
         choice = input_choice1_3(screen)
 
@@ -184,7 +137,7 @@ def menu(screen):
             level_choice,chosen_level = select_difficulty(screen)
 
             while True:
-                display.sub_menu_player_choice(screen)
+                #display.sub_menu_player_choice(screen)
 
                 word_choice = input_enter_choice1_3(screen)
 

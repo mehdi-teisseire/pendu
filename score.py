@@ -4,6 +4,14 @@ import os
 import display
 from inputs import *
 
+
+# To display the score table
+def display_score_table(screen):
+    scores = read_scores()
+    sorted_scores = sorted(scores.items(), key = lambda x: x[1], reverse = True)
+
+    display.score_tab_display(screen, sorted_scores)
+
 # Score rules based on levels
 score_rules = {
     "1": {"gagné": 5, "perdu": -1},
@@ -49,6 +57,4 @@ def display_score_table(screen):
     scores = read_scores()
     sorted_scores = sorted(scores.items(), key = lambda x: x[1], reverse = True)
 
-    display.score_tab_title(screen)
-    display.player_score(screen)
-    display.for_each_player_name_score(screen, sorted_scores)
+    display.score_tab_display(screen, sorted_scores)
