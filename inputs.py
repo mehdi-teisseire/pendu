@@ -251,7 +251,7 @@ def get_input(screen, first= '', second= '', third = '', fourth = '', fifth = ''
                twentieth_one ='', twentieth_two = '', twentieth_tree = ''):
     input_box_width = 300
     input_box_height = 25
-    input_box_x = (900 - input_box_width) // 2
+    input_box_x = (400 - input_box_width) // 2
     input_box_y = 600 - input_box_height - 50
 
     input_box = pygame.Rect(input_box_x, input_box_y, input_box_width, input_box_height)

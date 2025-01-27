@@ -15,5 +15,6 @@ Gigi,0
 Pierre,0
 Jean,0
 Sophie,0
-
 Estelle,0
+jeremy,0
+thierry,2

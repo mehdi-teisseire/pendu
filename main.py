@@ -4,7 +4,7 @@ import menu
 def main():
     pygame.init()
     pygame.font.init()
-    screen = pygame.display.set_mode((900, 600))
+    screen = pygame.display.set_mode((500, 600))
     pygame.display.set_caption("Le Jeu du Pendu")
     running = True
 
