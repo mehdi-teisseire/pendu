@@ -13,13 +13,13 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
-        # Fill the screen with black
+        
         screen.fill((0, 0, 0))
 
-        # Call the menu function to render the menu
+        
         menu.menu(screen)
 
-        # Update the display
+        
         pygame.display.flip()
 
     pygame.quit()

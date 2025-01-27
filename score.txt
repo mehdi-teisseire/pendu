@@ -1,4 +1,4 @@
-Chris,-1
+Chris,-3
 Elsa,0
 Helène,0
 Robby,-1
@@ -9,3 +9,11 @@ Henri,0
 Zazou,0
 Hugo,0
 Albert,0
+Elisabeth,0
+Quentin,0
+Gigi,0
+Pierre,0
+Jean,0
+Sophie,0
+
+Estelle,0

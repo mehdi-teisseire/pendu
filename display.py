@@ -5,231 +5,711 @@ from inputs import get_input
 
 # Menu Errors
 def player_name_issue(screen):
-    first_error_part = "Oupps il y a un problème"
-    #second_error_part = ""
-    #third_error_part = ""
-    #fourth_error_part = ""
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Oupps il y a un problème"
+    fifth = " "
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_player_name(screen):
-    first_error_part = "Le nom que vous avez entré est invalide."
-    second_error_part = "Assurez-vous qu'il contient au moins 4 lettres"
-    third_error_part = "et uniquement des lettres."
-    return get_input(screen, first_error_part, second_error_part, third_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth ="Le nom que vous avez entré est invalide."
+    fifth = "Assurez-vous qu'il contient au moins 4 lettres"
+    sixth = "et uniquement des lettres."
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def player_word_issue(screen):
-    first_error_part = "Le mot que vous avez fourni est invalide."
-    second_error_part = "Vérifiez qu'il contient le bon nombre de caractères,"
-    third_error_part = "uniquement des lettres, sans espaces,"
-    fourth_error_part = "'-' est autorisé pour les mots composés."
-    return get_input(screen, first_error_part, second_error_part, third_error_part, fourth_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third ="Le mot que vous avez fourni est invalide."
+    fourth ="Vérifiez qu'il contient le bon nombre de caractères,"
+    fifth = "uniquement des lettres, sans espaces,"
+    sixth = "'-' est autorisé pour les mots composés."
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def name_already_registered(screen):
-    first_error_part = "Ce nom est déjà enregistré."
-    second_error_part = "Veuillez en choisir un autre."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Ce nom est déjà enregistré."
+    fifth = "Veuillez en choisir un autre."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_level_choice_mess(screen):
-    first_error_part = "Choix de niveau invalide."
-    second_error_part = "Veuillez entrer un nombre entre 1 et 4."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Choix de niveau invalide."
+    sixth = " "
+    seventh = "Veuillez entrer un nombre entre 1 et 4."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_choice_mess(screen):
-    first_error_part = "Erreur : Veuillez entrer 1 ou 2."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Erreur."
+    sixth = " "
+    seventh = "Veuillez entrer 1 ou 2. "
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
+
 
 def error_happen_adding_word(screen):
-    first_error_part = "Une erreur est survenue lors de l'ajout du mot."
-    second_error_part = "Veuillez réessayer."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Une erreur est survenue lors de l'ajout du mot."
+    sixth = "Veuillez réessayer."
+    seventh = "Appuyez \"Entrée\" pour continuer. "
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_word_mess(screen):
-    first_error_part = "Ce mot n'est pas valide."
-    second_error_part = "Veuillez essayer à nouveau."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Ce mot n'est pas valide."
+    sixth = "Veuillez réessayer."
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_choice_mess_3(screen):
-    first_error_part = "Choix invalide."
-    second_error_part = "Veuillez entrer 1, 2 ou 3."
-
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Choix invalide."
+    sixth = " "
+    seventh = "Veuillez entrer 1, 2 ou 3."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_choice_mess_1(screen):
-    first_error_part = "Choix invalide."
-    second_error_part = "Veuillez entrer 1."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth = "Choix invalide."
+    sixth = " "
+    seventh = "Veuillez entrer 1."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
+
 
 def invalid_choice_try_again(screen):
-    first_error_part = "Choix invalide."
-    second_error_part = "Veuillez essayez encore une fois."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Choix invalide."
+    fifth = "Veuillez essayez encore une fois."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 # Rules errors
 def invalid_level_mess(screen):
-    first_error_part = "Erreur : un niveau non valide à été entré."
-    second_error_part = "Veuillez réessayer."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Erreur : un niveau non valide à été entré."
+    fifth = "Veuillez réessayer."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def lenght_error_mess(screen, criteria):
-    first_error_part = f"Erreur: le mot doit comporter entre {criteria['min_length']}"
-    second_error_part = f"et {criteria['max_length']} lettres, incluant les traits d'union."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = "Erreur."
+    fourth = f"le mot doit comporter entre {criteria['min_length']}"
+    fifth = f"et {criteria['max_length']} lettres,"
+    sixth = "incluant les traits d'union."
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def no_space_error_mess(screen):
-    first_error_part = "Erreur: le mot ne doit pas contenir d'espaces."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Erreur."
+    fifth = "le mot ne doit pas contenir d'espaces."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def word_already_in_collection_mess(screen):
-    first_error_part = "Erreur: Le mot est déjà présent dans la collection."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Erreur."
+    fifth = "Le mot est déjà présent dans la collection."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def no_space_word_error_mess(screen):
-    first_error_part = "Erreur: le mot ne doit contenir que des lettres"
-    second_error_part = "ou des traits d'union, sans espaces."
-    return get_input(screen, first_error_part, second_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth = "Erreur."
+    fifth = "Le mot ne doit contenir que des lettres,"
+    sixth = "ou des traits d'union, sans espaces."
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def not_in_french_dictionnary_error_mess(screen):
-    first_error_part = "Erreur: ce mot n'a pas été trouvé dans le dictionnaire français."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = "Erreur."
+    fourth = "Ce mot n'a pas été trouvé"
+    fifth = "dans le dictionnaire français."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def file_do_not_exist_error(screen, filename):
-    first_error_part = f"Erreur: Le fichier {filename} n'existe pas."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = "Erreur."
+    fifth = f"Le fichier {filename} n'existe pas."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 # Play errors
 def empty_input_error(screen):
-    first_error_part = "L'entrée ne peut pas être vide."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = "L'entrée ne peut pas être vide."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def space_input_error(screen):
-    first_error_part = "L'entrée ne peut pas être un espace."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = "L'entrée ne peut pas être un espace."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def invalid_character_errors(screen):
-    first_error_part = "Caractère invalide. Veuillez entrer une lettre."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = "Caractère invalide."
+    fifth = "Veuillez entrer une lettre."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 # Menu messages
 
-"""
-def welcome_player(screen, player_name):
-    first_message = f"Bienvenue de nouveau, {player_name}!"
-    second_message = "Vos nouveaux exploits s'ajouteront aux précédents !"
-    return get_input(screen, first_message, second_message)
-"""
 def enter_name_to_register(screen):
-    first_error_part = "D'accord, veuillez entrer votre nom pour vous enregistrer."
-    return get_input(screen, first_error_part,)
-""""
-def saved_your_name(screen):
-    first_message = "Votre nom a été sauvegardé avec succès."
-    second_message = "Bienvenue dans le jeu !"
-    return get_input(screen, first_message, second_message)
-"""
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = "D'accord !"
+    fifth = "Veuillez entrer votre nom pour vous enregistrer."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
+
 def you_chose_level(screen, chosen_level):
-    first_error_part = f"Vous avez choisi le niveau : {chosen_level}."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = f"Vous avez choisi le niveau : {chosen_level}."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def return_menu_mess(screen):
-    first_error_part = "Retour au menu ..."
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = "Retour au menu ..."
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def word_added_succesfully(screen):
-    first_error_part = "Votre mot a été ajouté à la collection avec succès !"
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = "Votre mot a été ajouté à la collection !"
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def return_first_menu(screen):
-    first_error_part = "Retour au menu principal"
-    return get_input(screen, first_error_part)
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third = " "
+    fourth = " "
+    fifth = "Retour au menu principal"
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
+# Scores
+def score_tab_display(screen, sorted_scores):
+    screen.fill((0, 0, 0))
+    pygame.display.set_caption("Tableau des Scores") 
+    #render_text(screen, "=== Tableau des Scores ===", (50, 50))
+    first = "=== Tableau des Scores ==="
+    second = "Nom du Joueur    Score"
+    third = for_each_player_name_score(sorted_scores)
 
-"""
-# Rules menu 
-def hangman_title(screen):
-    first_message = "=== LE JEU DU PENDU ==="
-    return get_input(screen, first_message)
+    get_input(screen, first, second, third[0] if third else " ", " " if len(third) < 2 else third[1], " " if len(third) < 3 else third[2], " " if len(third) < 4 else third[3], " " if len(third) < 5 else third[4], " " if len(third) < 6 else third[5], " " if len(third) < 7 else third[6], " " if len(third) < 8 else third[7], " " if len(third) < 9 else third[8], " " if len(third) < 10 else third[9])
 
-def word_to_guess(screen, display_word):
-    first_message = "Le mot à deviner : "
-    second_message = display_word
-    return get_input(screen, first_message, second_message)
-"""
-def number_errors(screen, errors_remaining):
-    first_message = f"Vous avez encore {errors_remaining} erreurs restantes."
-    return get_input(screen, first_message)
+def for_each_player_name_score(players):    
+    temp_list = []
+    spaces = "　　　　　　　　　　　　　　　"
+    for name, score in players:
 
-def letters_used(screen, letters_tried):
-    first_message = "Les lettres déjà utilisées :"
-    second_message = str(letters_tried)
-    return get_input(screen, first_message, second_message,)
-"""
-def already_used_letter(screen):
-    first_message = "Cette lettre a déjà été utilisée."
-    second_message = "Veuillez en proposer une nouvelle."
-    return get_input(screen, first_message, second_message) 
-
-def well_done(screen):
-    first_message = "Bien joué!"
-    return get_input(screen, first_message)
-
-def not_this_time(screen):
-    first_message = "Pas cette fois, essayez encore !"
-    return get_input(screen, first_message)
+        temp_name = ""
+        for i in range(len(name)):
+            if name[i] in "àäâ":
+                temp_name += chr(65344)
+            elif name[i] in "éêèë":
+                temp_name += chr(65349)
+            elif name[i] in "ïî":
+                temp_name += chr(65353)
+            elif name[i] in "öôò":
+                temp_name += chr(65359)
+            elif name[i] in "ûüù":
+                temp_name += chr(65365)
+            else:    
+                temp_name += chr(ord(name[i])+65248)
+        
+        if len(temp_name) > 15:
+            temp_name = temp_name[:14]
+        else:
+            temp_name = temp_name + spaces[:14-len(temp_name)]
+        temp_list.append(f"{temp_name}{score}")
+    return temp_list
 
 # Graphical representation of errors
-def errors_remaining0_graph(screen):
-    first_message = " ==========Y= "
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining0_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" ==========Y= "
+    fourteenth =" ||/       |  "
+    fifteenth =" ||        0  "
+    sixteenth =" ||       /|\ "
+    seventeenth =" ||       /|  "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
+    
 
-def errors_remaining1_graph(screen):
-    first_message = " ||/       |  "
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining1_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" ||/       |  "
+    fifteenth =" ||        0  "
+    sixteenth =" ||       /|\ "
+    seventeenth =" ||       /|  "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining2_graph(screen):
-    first_message = " ||        0  "
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining2_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" ||        0  "
+    sixteenth =" ||       /|\ "
+    seventeenth =" ||       /|  "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining3_graph(screen):
-    first_message = r" ||       /|\ "
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining3_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" ||       /|\ "
+    seventeenth =" ||       /|  "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining4_graph(screen):
-    first_message = " ||       /|  "
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining4_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth ="  "
+    sixteenth =" "
+    seventeenth =" ||       /|  "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining5_graph(screen):
-    first_message = "=============="
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining5_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth ="=============="
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining6_graph(screen):
-    first_message = "||  ||  ||  ||"
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining6_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth = " "
+    nineteenth ="||  ||  ||  ||"
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining7_graph(screen):
-    first_message = "=============="
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining7_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth =" "
+    nineteenth =" "
+    twentieth = "=============="
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining8_graph(screen):
-    first_message = "||  ||  ||  ||"
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining8_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth =" "
+    nineteenth =" "
+    twentieth = " "
+    twentieth_one ="||  ||  ||  ||"
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining9_graph(screen):
-    first_message = "=============="
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining9_graph(screen, display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth =" "
+    nineteenth =" "
+    twentieth = " "
+    twentieth_one = " "
+    twentieth_two ="=============="
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
 
-def errors_remaining10_graph(screen):
-    first_message = "||  ||  ||  ||"
-    return get_input(screen, first_message, "", "", "")
+def errors_remaining10_graph(screen,display_word, errors_remaining, letters_tried):
+    first= "======= LE JEU DU PENDU ======="
+    second =" "
+    third =  "Le mot à deviner : "
+    fourth = display_word
+    fifth = " "
+    sixth = f"Il reste {errors_remaining} erreurs."
+    seventh = "Les lettres déjà utilisées :"
+    eighth = str(letters_tried)
+    ninth = " "
+    tenth = "Raté, essayez encore !"
+    eleventh = "Appuyez \"Entrée\" pour continuer."
+    twelfth = " "
+    thirteenth =" "
+    fourteenth =" "
+    fifteenth =" "
+    sixteenth =" "
+    seventeenth =" "
+    eighteenth =" "
+    nineteenth =" "
+    twentieth = " "
+    twentieth_one =" "
+    twentieth_two =" "
+    twentieth_tree = "||  ||  ||  ||"
+    input_letter =  get_input(screen,first, second, third , fourth, fifth, sixth, 
+                              seventh, eighth, ninth, tenth, eleventh , twelfth , 
+                              thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                              eighteenth , nineteenth, twentieth, twentieth_one, twentieth_two,
+                                twentieth_tree)
+    return input_letter[0:1].lower()
+
 
 def won_mess(screen, solution):
-    first_message = f"Vous avez gagné ! Le mot était : {solution}"
-    return get_input(screen, first_message, "", "", "")
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =" "
+    fifth =f"Vous avez gagné ! Le mot était : {solution}"
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
 def lose_mess(screen, solution):
-    first_message = f"Vous avez perdu ! : Le mot était : {solution}."
-    second_message = "Ne vous découragez pas et essayez encore !"
-    return get_input(screen, first_message, second_message, "", "")
+    first ="======= LE JEU DU PENDU ======="
+    second = " "
+    third =" "
+    fourth =  f"Vous avez perdu ! : Le mot était : {solution}."
+    fifth ="Ne vous découragez pas et essayez encore !"
+    sixth = " "
+    seventh = "Appuyez \"Entrée\" pour continuer."
+    return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
+# Scores
+def score_tab_display(screen, sorted_scores):
+    screen.fill((0, 0, 0))
+    pygame.display.set_caption("Tableau des Scores") 
+    #render_text(screen, "=== Tableau des Scores ===", (50, 50))
+    first = "=== Tableau des Scores ==="
+    second = "Nom du Joueur              Score"
+    third = for_each_player_name_score(sorted_scores)
+
+    get_input(screen, first, second, third[0] if third else " ", " " if len(third) < 2 else third[1], " " if len(third) < 3 else third[2], " " if len(third) < 4 else third[3], " " if len(third) < 5 else third[4], " " if len(third) < 6 else third[5], " " if len(third) < 7 else third[6], " " if len(third) < 8 else third[7], " " if len(third) < 9 else third[8], " " if len(third) < 10 else third[9])
+
+def for_each_player_name_score(players):    
+    temp_list = []
+    spaces = "　　　　　　　　　　　　　　　"
+    for name, score in players:
+
+        temp_name = ""
+        for i in range(len(name)):
+            if name[i] in "àäâ":
+                temp_name += chr(65344)
+            elif name[i] in "éêèë":
+                temp_name += chr(65349)
+            elif name[i] in "ïî":
+                temp_name += chr(65353)
+            elif name[i] in "öôò":
+                temp_name += chr(65359)
+            elif name[i] in "ûüù":
+                temp_name += chr(65365)
+            else:    
+                temp_name += chr(ord(name[i])+65248)
+        
+        if len(temp_name) > 15:
+            temp_name = temp_name[:14]
+        else:
+            temp_name = temp_name + spaces[:14-len(temp_name)]
+        temp_list.append(f"{temp_name}{score}")
+    return temp_list
+"""
 # Scores
 def score_tab_title(screen):
     screen.fill((0, 0, 0))
@@ -317,7 +797,7 @@ def return_first_menu(screen):
 
 #def tanks_for_playing(screen):
     #render_text(screen, "Merci d'avoir joué ! À bientôt.", (50, 1000))
-"""
+
 # Menus
 def select_difficulty_menu(screen):
     render_text(screen, "=== Choisissez Votre Destin ===", (50, 50))
@@ -342,7 +822,7 @@ def sub_menu_player_choice(screen):
     render_text(screen, "2. Ajouter un Mot à la Collection", (50, 90))
     render_text(screen, "3. Revenir au Menu Principal", (50, 110))
     
-"""
+
 # Rules errors
 def invalid_level_mess(screen):
     render_text(screen, "Erreur : un niveau non valide à été entré. Veuillez réessayer.", (50, 1800))
@@ -401,7 +881,7 @@ def well_done(screen):
 
 def not_this_time(screen):
     render_text(screen, "Pas cette fois, essayez encore !", (50, 2650))
-"""
+
 # Graphical representation of errors
 
 def errors_remaining0_graph(screen):
@@ -458,3 +938,4 @@ def for_each_player_name_score(screen, players):
     for name, score in players:        
         render_text(screen, f"{name}    {score}", (50, y_position))        
         y_position += 25  
+"""
