@@ -63,7 +63,6 @@ def register_player(screen):
 
 # To select the game level
 def select_difficulty(screen):
-     #input_enter_choice1_4(screen)
 
     while True: 
         level_choice = input_enter_choice1_4(screen)
@@ -126,7 +125,6 @@ def menu(screen):
     player_name = ""
 
     while True:
-        #input_choice1_3(screen)
         
         choice = input_choice1_3(screen)
 
@@ -137,8 +135,6 @@ def menu(screen):
             level_choice,chosen_level = select_difficulty(screen)
 
             while True:
-                #display.sub_menu_player_choice(screen)
-
                 word_choice = input_enter_choice1_3(screen)
 
                 if word_choice == "1":

@@ -1,12 +1,12 @@
 
 import pygame
-
+pygame.init()
+  
 # pygame render text
 def render_text(screen, text, position, font_size=16, color=(255, 255, 255)):
     font = pygame.font.Font("meiryo.ttc", font_size)
     text_surface = font.render(text, True, color)
     screen.blit(text_surface, position)
-
 
 # Register to score or play as a guest
 def input_register_or_guest(screen):
@@ -73,7 +73,7 @@ def input_play_again_or_menu(screen):
     third =" "
     fourth =" "
     fifth = "Voulez-vous refaire une partie ?"
-    sixth = " 1 pour oui"
+    sixth = "1 pour oui"
     seventh = "2 pour retourner au menu :"
     return get_input(screen, first, second,third,fourth,fifth,sixth,seventh)
 
@@ -135,8 +135,24 @@ def input_enter_your_letter(screen, display_word, errors_remaining, letters_trie
     eight = str(letters_tried)
     ninth = " "
     tenth = "Proposez une lettre : "
+    eleventh = " "
+    twelfth = " "
+    thirteenth =" ==========Y= " if errors_remaining == 0 else " "
+    fourteenth =" ||/                      |  " if errors_remaining <= 1 else " "
+    fifteenth =" ||                       0  " if errors_remaining <= 2 else " "
+    sixteenth =" ||                      /|\uFF3C"if errors_remaining <= 3 else " "
+    seventeenth =" ||                      /|  " if errors_remaining <= 4 else " "
+    eighteenth ="==============" if errors_remaining <= 5 else " "
+    nineteenth ="||  ||  ||  ||  ||  ||  ||  || " if errors_remaining <= 6 else " "
+    twentieth = "==============" if errors_remaining <= 7 else " "
+    twentieth_one ="||  ||  ||  ||  ||  ||  ||  || " if errors_remaining <= 8 else " "
+    twentieth_two ="==============" if errors_remaining <= 9 else " "
+    twentieth_tree = "||  ||  ||  ||  ||  ||  ||  || " if errors_remaining <= 10 else " "
     input_letter = get_input(screen, first, second,third,fourth,fifth,sixth,
-                             seventh,eight,ninth,tenth)
+                             seventh,eight,ninth,tenth, eleventh, twelfth, 
+                             thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, 
+                             eighteenth, nineteenth, twentieth, twentieth_one, twentieth_two,
+                             twentieth_tree)
     return input_letter[0:1].lower()
 
 # Already used letter
@@ -233,15 +249,15 @@ def get_input(screen, first= '', second= '', third = '', fourth = '', fifth = ''
                fifteenth = '', sixteenth = '', seventeenth= '', eighteenth = '', nineteenth= '', twentieth = '',
                twentieth_one ='', twentieth_two = '', twentieth_tree = ''):
     input_box_width = 300
-    input_box_height = 25
-    input_box_x = (900 - input_box_width) // 2
+    input_box_height = 30
+    input_box_x = (410 - input_box_width) // 2
     input_box_y = 600 - input_box_height - 50
 
     input_box = pygame.Rect(input_box_x, input_box_y, input_box_width, input_box_height)
     color_active = pygame.Color('white')
     color = color_active 
     text = ''
-    font = pygame.font.Font(None, 25)
+    font = pygame.font.Font("meiryo.ttc", 16)
 
     error_lines = [first, second, third , fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh , twelfth 
                    , thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, eighteenth , nineteenth, twentieth,

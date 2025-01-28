@@ -1,4 +1,4 @@
-Chris,-3
+Chris,39
 Elsa,0
 Helène,0
 Robby,-1
@@ -15,5 +15,4 @@ Gigi,0
 Pierre,0
 Jean,0
 Sophie,0
-
 Estelle,0
