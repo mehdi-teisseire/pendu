@@ -1,9 +1,6 @@
-
-
 import os
 import display
 from inputs import *
-
 
 # To display the score table
 def display_score_table(screen):
@@ -19,6 +16,7 @@ score_rules = {
     "3": {"gagné": 3, "perdu": -1},
     "4": {"gagné": 2, "perdu": -1}
 }
+
 # To update the score when player already have an account
 def update_score(player_name, level, won):
     scores = read_scores()
@@ -50,7 +48,6 @@ def write_scores(scores):
     with open('score.txt', 'w', encoding="utf-8") as file:
         for name, score in scores.items():
             file.write(f"{name},{score}\n")
-
 
 # To display the score table
 def display_score_table(screen):
